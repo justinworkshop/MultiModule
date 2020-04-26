@@ -1,5 +1,6 @@
 package com.ubtech.multimodule;
 
+import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,9 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.ubtech.common.bean.Order;
 import com.ubtech.common.event.MessageEvent;
-import com.ubtech.order.bean.TestOrder;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -29,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void jumpOrder(View view) {
-        Order order = new Order();
+        /*Order order = new Order();
         order.setId(1);
         order.setDesc("First order");
         order.setPrice(100);
@@ -46,13 +45,15 @@ public class MainActivity extends AppCompatActivity {
                 .withBundle("bundle", bundle)
                 .withParcelable("p", order)
                 .withObject("testOrder", testOrder)
-                .navigation();
+                .navigation();*/
 
-//        Intent intent = new Intent();
-////        intent.setClassName("com.ubtech.order", "com.ubtech.order.Order_MainActivity");
+        Intent intent = new Intent();
+        intent.setClassName("com.ubtech.order", "com.ubtech.order.Order_MainActivity");
+
 //        ComponentName componentName = new ComponentName("com.ubtech.order", "com.ubtech.order.Order_MainActivity");
+        intent.addCategory(Intent.CATEGORY_DEFAULT);
 //        intent.setComponent(componentName);
-//        startActivity(intent);
+        startActivity(intent);
     }
 
     public void jumpPersonal(View view) {
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void testEventBus(){
+    public void testEventBus() {
         MessageEvent messageEvent = new MessageEvent();
         messageEvent.setType("bus");
         messageEvent.setValue(99);
