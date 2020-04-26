@@ -43,6 +43,13 @@ dependencies {
     androidTestImplementation app_implementation.android_junit
     androidTestImplementation app_implementation.espresso
 
+    /* ARouter */
     api 'com.alibaba:arouter-api:1.5.0'
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+
+    /* EventBus */
+    api 'org.greenrobot:eventbus:3.2.0'
+
+    /* Gson */
+    api 'com.google.code.gson:gson:2.8.6'
 }

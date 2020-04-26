@@ -23,6 +23,12 @@ android {
         versionName app_android.versionName
 
         testInstrumentationRunner app_android.testInstrumentationRunner
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -40,4 +46,7 @@ dependencies {
     app_implementation.each {
         k, v -> implementation v
     }
+
+    implementation project(":common")
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
 }

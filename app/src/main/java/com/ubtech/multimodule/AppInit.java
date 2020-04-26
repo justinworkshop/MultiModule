@@ -23,4 +23,9 @@ public class AppInit extends Application {
 
         ARouter.init(this);
     }
+
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+    }
 }
