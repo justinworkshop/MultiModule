@@ -4,6 +4,8 @@ if (isRelease) {
     apply plugin: 'com.android.application'
 }
 
+println("编译 personal build.gradle")
+
 def app_android = this.getRootProject().ext.app_android
 def app_implementation = this.getRootProject().ext.app_implementation
 

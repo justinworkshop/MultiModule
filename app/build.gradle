@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 
+println("编译 app build.gradle")
+
 def app_android = this.getRootProject().ext.app_android
 def app_implementation = this.getRootProject().ext.app_implementation
 
@@ -14,7 +16,6 @@ android {
         versionName app_android.versionName
         testInstrumentationRunner app_android.testInstrumentationRunner
 
-        println("app compile ----->")
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]

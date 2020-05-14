@@ -1,4 +1,4 @@
-printf("setttings >>>>>")
+println("编译 setttings.gradle")
 
 include ':app', ':personal', ':common', ':order'
 rootProject.name='MultiModule'

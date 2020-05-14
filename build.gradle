@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 apply from : "app_config.gradle"
 
-printf("build.gradle >>>>>")
+println("编译 Project build.gradle")
 
 buildscript {
     repositories {

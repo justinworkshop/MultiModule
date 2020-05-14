@@ -1,11 +1,11 @@
-printf("app_config >>>>>")
+println("编译 Project app_config.gradle")
 
 /*把公用的、可扩展的加入到这里*/
 
 ext {
     userName = "zhengwei"
 
-    isRelease = true
+    isRelease = false
 
     app_android = [
             compileSdkVersion        : 29,
