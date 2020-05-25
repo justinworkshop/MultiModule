@@ -5,7 +5,7 @@ println("编译 Project app_config.gradle")
 ext {
     userName = "zhengwei"
 
-    isRelease = false
+    isRelease = true
 
     app_android = [
             compileSdkVersion        : 29,

@@ -15,6 +15,7 @@ android {
 
 
     defaultConfig {
+        // 组件化可以分别编译，集成化需要注释
         if (!isRelease) {
             applicationId "com.ubtech.order"
         }
@@ -37,6 +38,26 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    /**
+     * 设置源集属性，更改源集的Java目录或者自由目录
+     */
+    sourceSets {
+        main {
+            if (!isRelease) {
+                // 组件化，需要单独运行
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                java.srcDirs = ['src/main/java']
+                res.srcDirs = ['src/main/res']
+                resources.srcDirs = ['src/main/resources']
+                aidl.srcDirs = ['src/main/aidl']
+                assets.srcDirs = ['src/main/assets']
+            } else {
+                // 集成化，整个项目打包
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
         }
     }
 
